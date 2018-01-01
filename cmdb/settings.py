@@ -74,6 +74,7 @@ WSGI_APPLICATION = 'cmdb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# todo 正式开发时换用 postgres
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
