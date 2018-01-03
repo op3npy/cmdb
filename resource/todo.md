@@ -9,4 +9,9 @@ resource it资源管理系统，包括物理机，虚拟机，容器等等，具
 * 资源和资源组的增删改查，指定资源或者资源组特定任务执行
 * 定时任务模块（写入数据库 or celery + rabbitmq/redis ?）
 * 资源数据导入，模板下载
-* 和agent保持长连接，由agent发送心跳包，
+* 和agent保持长连接，由agent发送心跳包
+
+数据库设计参考
+> http://www.cnblogs.com/jcpythoner/p/cmdb.html
+> http://autohomeops.corpautohome.com/articles/%E6%B1%BD%E8%BD%A6%E4%B9%8B%E5%AE%B6CMDB%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/
+> http://dbaplus.cn/news-21-1271-1.html

@@ -35,6 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'resource',
+    'webterminal',
+    'audit',
+    'sso',
 ]
 
 MIDDLEWARE = [
@@ -71,20 +75,31 @@ WSGI_APPLICATION = 'cmdb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# my.conf
-# [client]
-# database = DB_NAME
-# host = localhost
-# user = DB_USER
-# password = DB_PASSWORD
-# default-character-set = utf8
+
 DATABASES = {
-    'default': {
+    'default': {},
+    'resource': {
+        'NAME': 'resource',
+        'HOST': 'localhost',
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': 'my.conf',
-        },
-    }
+        'USER': 'root',
+        'PASSWORD': 'root'
+    },
+    # 'sso': {
+    #     'NAME': 'sso',
+    #     'HOST': 'localhost',
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'USER': 'root',
+    #     'PASSWORD': 'root'
+    # },
+}
+
+# use multi-database in django
+DATABASE_ROUTERS = ['cmdb.database_router.DatabaseAppsRouter']
+DATABASE_APPS_MAPPING = {
+    # 'app':'db',
+    'resource': 'resource',
+    # 'sso': 'sso',
 }
 
 # Password validation
