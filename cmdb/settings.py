@@ -85,21 +85,21 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'root'
     },
-    # 'sso': {
-    #     'NAME': 'sso',
-    #     'HOST': 'localhost',
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'USER': 'root',
-    #     'PASSWORD': 'root'
-    # },
+    'sso': {
+        'NAME': 'sso',
+        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': 'root'
+    },
 }
 
 # use multi-database in django
-DATABASE_ROUTERS = ['cmdb.database_router.DatabaseAppsRouter']
+DATABASE_ROUTERS = ['cmdb.db_route.DatabaseAppsRouter']
 DATABASE_APPS_MAPPING = {
     # 'app':'db',
     'resource': 'resource',
-    # 'sso': 'sso',
+    'sso': 'sso',
 }
 
 # Password validation
