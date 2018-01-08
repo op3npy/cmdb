@@ -10,6 +10,7 @@ resource it资源管理系统，包括物理机，虚拟机，容器等等，具
 * 定时任务模块（写入数据库 or celery + rabbitmq/redis ?）
 * 资源数据导入，模板下载
 * 和agent保持长连接，由agent发送心跳包
+* agent端要有配置和脚本下发记录，数据发送记录
 
 数据库设计参考
 > http://www.cnblogs.com/jcpythoner/p/cmdb.html

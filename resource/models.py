@@ -22,17 +22,16 @@ class ResourceGroups(AbstractModel):
     name = models.CharField(max_length=300, blank=True, null=True, help_text='组名')
 
     class Meta:
-        managed = False
         db_table = 'resource_groups'
 
 
 class AbstractResourceModel(AbstractModel):
     """ 抽象资源信息 """
-    name = models.CharField(max_length=300, blank=True, null=True, unique=True, help_text='资源名称')
+    name = models.CharField(max_length=255, blank=True, null=True, unique=True, help_text='资源名称')
     status = models.IntegerField(blank=True, null=True, help_text='0：正常运行\n'
                                                                   '1停止\n2：删除\n-1：故障')
     comment = models.TextField(blank=True, null=True, help_text='注释信息')
-    resource_group = models.ForeignKey(ResourceGroups, on_delete=models.SET_NULL, help_text='资源组')
+    resource_group = models.ForeignKey(ResourceGroups, on_delete=models.SET_NULL, null=True, help_text='资源组')
 
     class Meta:
         abstract = True
@@ -53,7 +52,6 @@ class ExtendResourceInfo(AbstractResourceModel):
         self._types = json.dumps(types)
 
     class Meta:
-        managed = False
         db_table = 'extend_resource_info'
 
 
@@ -78,7 +76,6 @@ class HostResourceInfo(AbstractResourceModel):
     location = models.TextField(help_text='机房内的位置')  # todo ？
 
     class Meta:
-        managed = False
         db_table = 'host_resource_info'
 
 
@@ -105,13 +102,11 @@ class HistoryVM(AbstractHistory):
 
 class HistoryHost(AbstractHistory):
     class Meta:
-        managed = False
         db_table = 'history_host'
 
 
 class HistoryContainer(AbstractHistory):
     class Meta:
-        managed = False
         db_table = 'history_container'
 
 
@@ -121,5 +116,4 @@ class Task(AbstractModel):
     comment = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'task'
