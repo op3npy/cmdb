@@ -90,6 +90,8 @@ class AbstractHistory(models.Model):
     net_read_io = models.FloatField(help_text='网络下载速度， 单位byte')
     net_write_io = models.FloatField(help_text='网络上传速度， 单位byte')
 
+    collecting_time = models.DateTimeField(help_text='采集时间')
+
     class Meta:
         abstract = True
 
