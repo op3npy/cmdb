@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'cmdb.urls'
@@ -77,7 +78,8 @@ WSGI_APPLICATION = 'cmdb.wsgi.application'
 
 
 DATABASES = {
-    'default': {
+    'default': {},
+    'sso': {
         'NAME': 'sso',
         'HOST': 'localhost',
         'ENGINE': 'django.db.backends.mysql',
