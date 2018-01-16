@@ -102,6 +102,9 @@ DATABASE_APPS_MAPPING = {
     # 'app':'db',
     'resource': 'resource',
     'sso': 'sso',
+    'auth': 'sso',
+    'contenttypes': 'sso',
+    'sessions': 'sso',
 }
 
 # Password validation
