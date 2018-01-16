@@ -6,9 +6,9 @@ auth模型 —— User、Group和Permission —— 关联在一起并与ContentT
 
 
 先创建数据库
-drop DATABASE IF EXISTS sso ;
+DROP DATABASE IF EXISTS sso ;
 CREATE DATABASE IF NOT EXISTS   sso;
-drop DATABASE IF EXISTS resource;
+DROP DATABASE IF EXISTS resource;
 CREATE DATABASE IF NOT EXISTS resource;
 
 以下操作已经集成到自动化命令中, python manage.py db_cmd -h查看用法
@@ -18,5 +18,12 @@ python .\manage.py migrate --database resource
 python .\manage.py migrate auth --database=sso
 python .\manage.py migrate contenttypes --database=sso
 python .\manage.py migrate sessions --database=sso
+python .\manage.py migrate admin --database=sso
+
+
+python .\manage.py createsuperuser --database=sso --username=admin --email=none
+
+password=admin123
+
 
 

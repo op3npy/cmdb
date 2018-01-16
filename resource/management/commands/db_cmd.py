@@ -56,3 +56,4 @@ class Command(BaseCommand):
         call_command('migrate', 'auth', database='sso')
         call_command('migrate', 'contenttypes', database='sso')
         call_command('migrate', 'sessions', database='sso')
+        call_command('migrate', 'admin', database='sso')
