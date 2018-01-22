@@ -29,3 +29,6 @@ https://channels.readthedocs.io/en/latest/getting-started.html
 * 所有敏感数据都从环境变量获取
 * 服务器只能打开特定端口，其它默认屏蔽
 
+参考：
+* https://github.com/jumpserver/jumpserver
+* https://github.com/nigma/django-request-id

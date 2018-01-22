@@ -113,8 +113,15 @@ class HistoryContainer(AbstractHistory):
 
 
 class Task(AbstractModel):
+    name = models.CharField(max_length=128, unique=True, verbose_name='Name')
+    interval = models.IntegerField(verbose_name="间隔时间", null=True, blank=True, help_text="Units: seconds")
+    crontab = models.CharField(verbose_name="crontab", null=True, blank=True, max_length=128,
+                               help_text="5 * * * *")
+    is_periodic = models.BooleanField(default=False, help_text='是否定期执行')
+    callback = models.CharField(max_length=128, blank=True, null=True,
+                                verbose_name="celery 任务回调")  # Callback must be a registered celery task
+    is_deleted = models.BooleanField(default=False)
     status = models.IntegerField(blank=True, null=True)
-    main = models.TextField(blank=True, null=True)
     comment = models.TextField(blank=True, null=True)
 
     class Meta:

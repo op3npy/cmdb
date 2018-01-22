@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-# coding=utf-8
-# Created on 2018/1/2
+# -*- coding: utf-8 -*-
+# Created by zhou on 2018/1/22
