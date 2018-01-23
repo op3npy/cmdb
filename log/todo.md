@@ -14,6 +14,7 @@ https://pythonhosted.org/loggerglue/gettingstarted.html
 http://django-haystack.readthedocs.io/en/master/tutorial.html
 用python实现windows和linux下syslog客户端（conf文件生成， conf格式检查）
 https://www.jianshu.com/p/8656fc85e497
+* linux日志文件http://blog.csdn.net/oxford_d/article/details/51820031
 * 提供高级sql查询？
 
 
