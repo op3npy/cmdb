@@ -1,14 +1,17 @@
 #!/usr/bin/env python
 # coding=utf-8
 # Created on 2018/1/13
-
-
+import logging
 import os
 
-module = os.environ.get('DJANGO_RUNNING_ENVIRON')
-if module is None or module == 'dev':
+current_env = os.environ.get('DJANGO_RUNNING_ENVIRON', 'dev')
+if current_env == 'dev':
     from cmdb.settings.dev import *
-elif module == 'production':
+elif current_env == 'production':
     from cmdb.settings.production import *
-elif module == 'test':
+elif current_env == 'test':
     from cmdb.settings.test import *
+
+logger = logging.getLogger('cmdb')
+
+logger.info('test')
