@@ -1,6 +1,6 @@
 from .common import *
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 DJANGO_LOG_LEVEL = 'DEBUG'
 
