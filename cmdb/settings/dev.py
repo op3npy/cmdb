@@ -1,6 +1,6 @@
 from .common import *
 
-
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 DJANGO_LOG_LEVEL = 'DEBUG'
 
@@ -32,11 +32,4 @@ LOGGING = {
             'propagate': False,
         },
     }
-}
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgiref.inmemory.ChannelLayer",
-        "ROUTING": "cmdb.channel_route.routing",
-    },
 }
