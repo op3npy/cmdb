@@ -13,6 +13,7 @@ https://channels.readthedocs.io/en/latest/getting-started.html
 包括流量分析（web攻击，ddos攻击，暴力破解），安全态势，漏洞管理，
 以及设备监控（非法媒介挂载到物理机，非法设备入网）、高危操作监控。参考蜜獾系统http://www.4hou.com/technology/9687.html 和
 安全运维http://www.freebuf.com/articles/neopoints/158586.html
+DNSlog http://www.polaris-lab.com/index.php/archives/423/
 
 
 公用系统

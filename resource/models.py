@@ -80,7 +80,7 @@ class HostResourceInfo(AbstractResourceModel):
 
 
 class AbstractHistory(models.Model):
-    # todo 如此大量的数据是否需要分表？
+    # todo 如此大量的数据是否需要分表，或者换成whoosh + 时间序列数据库，？
     """ 抽象历史记录类，收集主机固定时刻的数据 """
     cpu_usage = models.FloatField(help_text='cpu使用率， 百分比')
     memory_usage = models.FloatField(help_text='内存使用率')
