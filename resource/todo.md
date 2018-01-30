@@ -11,7 +11,7 @@ resource it资源管理系统，包括物理机，虚拟机，容器等等，具
 * 定时任务模块（写入数据库 并且交由celery + rabbitmq/redis ? 执行调度）
 包括名词（唯一）、间隔时间、指定时间点执行、是否重复、脚本类型（文本文件类型，支持python，shell等实现规定的输入输出，并且客户端支持则可以，默认python，此字段可以在前端实现简单的ide功能）、指定参数、ctime, atime
 * 资源数据导入，模板下载
-* 和agent保持长连接，由agent发送心跳包
+* 和agent保持长连接，由agent发送心跳包 http://channels.readthedocs.io/en/stable/getting-started.html
 * agent端要有配置、脚本下发、脚本执行、执行结果的记录，数据发送记录，服务器端主动执行采用fabric，前提是ssh密钥配置好
 * 主动采集和被动采集
 * 时间序列数据的可视化

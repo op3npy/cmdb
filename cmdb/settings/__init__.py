@@ -12,6 +12,4 @@ elif current_env == 'production':
 elif current_env == 'test':
     from cmdb.settings.test import *
 
-logger = logging.getLogger('cmdb')
-
-logger.info('test')
+print('current env:', current_env)
