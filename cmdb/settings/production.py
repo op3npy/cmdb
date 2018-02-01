@@ -40,6 +40,6 @@ CHANNEL_LAYERS = {
         "CONFIG": {
             "hosts": [("localhost", 6379)],
         },
-        "ROUTING": "cmdb.channel_route.routing",
+        "ROUTING": "channel_server.route.channel_routing",
     },
 }

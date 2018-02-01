@@ -11,7 +11,16 @@ from urllib.parse import parse_qs
 # Connected to websocket.connect
 @channel_session
 def ws_connect(message, room_name):
-    # todo 主机验证：判断主机是否是内网的ip，主机是否是合法实例？
+    """
+    # todo
+    1. 主机验证：判断主机是否是内网的ip，主机是否是合法实例？
+    2. 验证之后，判断是否是需要做初始化操作（ssh密钥配置）
+
+    :param message:
+    :param room_name:
+    :return:
+    """
+
     # Accept connection
     message.reply_channel.send({"accept": True})
     # Parse the query string
