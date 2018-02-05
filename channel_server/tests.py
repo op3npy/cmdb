@@ -19,4 +19,4 @@ async def test_my_consumer():
     response = await communicator.receive_from()
     assert response == "hello"
     # Close
-    communicator.disconnect()
+    await communicator.disconnect()
