@@ -38,4 +38,4 @@ python .\manage.py createsuperuser --database=sso --username=admin --email=none
 password=admin123
 
 
-
+运行ws服务器 daphne  -b 0.0.0.0 -p 8001 cmdb.asgi:application

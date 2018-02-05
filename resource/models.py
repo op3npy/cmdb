@@ -73,7 +73,7 @@ class HostResourceInfo(AbstractResourceModel):
     disk_size = models.FloatField(help_text='磁盘容量', null=True)
     cpu_num = models.FloatField(help_text='cpu核心数', null=True)
 
-    location = models.TextField(help_text='机房内的位置')  # todo ？
+    location = models.TextField(help_text='机房内的位置', null=True)  # todo ？
 
     class Meta:
         db_table = 'host_resource_info'
