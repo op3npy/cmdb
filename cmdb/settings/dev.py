@@ -33,10 +33,3 @@ LOGGING = {
         },
     }
 }
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgiref.inmemory.ChannelLayer",
-        "ROUTING": "channel_server.route.channel_routing",
-    },
-}

@@ -33,13 +33,3 @@ LOGGING = {
         },
     }
 }
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgi_redis.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("localhost", 6379)],
-        },
-        "ROUTING": "channel_server.route.channel_routing",
-    },
-}
