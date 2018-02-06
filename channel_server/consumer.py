@@ -19,7 +19,7 @@ class ServerConsumer(WebsocketConsumer):
         """
         return ['cmdb']
 
-    def connect(self, **kwargs):
+    def connect(self, message, **kwargs):
         """
         1. 主机验证：判断主机是否是内网的ip，主机是否是合法实例？
         2. 验证之后，判断是否是需要做初始化操作（ssh密钥配置）
@@ -41,12 +41,15 @@ class ServerConsumer(WebsocketConsumer):
         self.send(text=text, bytes=bytes)
 
     def disconnect(self, message, **kwargs):
+        # todo disconnect is called after 'self.close' ??
         # Called when the socket closes
-        if close_code == 0:
-            self.offline()
+        # if close_code == 0:
+        #     self.offline()
+        print(message)
 
     def _is_allowed_to_connect(self):
         """ 判断客户端ip是否在白名单内，并且不在黑名单中 """
+        return True
 
     def _is_need_to_init(self):
         pass

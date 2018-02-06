@@ -113,7 +113,7 @@ class HistoryContainer(AbstractHistory):
 
 
 class Task(AbstractModel):
-    name = models.CharField(max_length=128, unique=True, verbose_name='Name')
+    name = models.CharField(max_length=128, unique=True, verbose_name='任务名称', default='未命名')
     interval = models.IntegerField(verbose_name="间隔时间", null=True, blank=True, help_text="Units: seconds")
     crontab = models.CharField(verbose_name="crontab", null=True, blank=True, max_length=128,
                                help_text="5 * * * *")
