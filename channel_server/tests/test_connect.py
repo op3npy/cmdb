@@ -11,8 +11,13 @@ class MyTests(ChannelTestCase):
 
     def test_a_thing(self):
         client = ProxyClient(path='/inner/', client_class=WSClient)
-        client.connect()
-        text = {'val': 'hello'}
-        client.send_text(text)
-        self.assertEqual(client.receive(), text)
-        client.disconnect()
+        try:
+            client.connect()
+            text = {'val': 'hello'}
+            client.send_text(text)
+            self.assertEqual(client.receive(), text)
+
+        except AssertionError as e:
+            raise AssertionError('认证失败') from e
+        finally:
+            client.disconnect()
