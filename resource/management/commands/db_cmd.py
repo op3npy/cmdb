@@ -53,6 +53,9 @@ class Command(BaseCommand):
     def init_db():
         call_command('makemigrations', 'resource')
         call_command('migrate', database='resource')
+        call_command('makemigrations', 'channel_server')
+        call_command('migrate', 'channel_server', database='resource')
+
         call_command('migrate', 'auth', database='sso')
         call_command('migrate', 'contenttypes', database='sso')
         call_command('migrate', 'sessions', database='sso')

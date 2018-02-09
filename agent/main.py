@@ -8,15 +8,20 @@ import contextlib
 
 import websockets
 
+# WS_SERVER_URI = 'ws://cmdb.inner.com:8000/inner/'  # production
+WS_SERVER_URI = 'ws://localhost:8000/inner/'  # dev and test
+
 
 async def main():
-    async with websockets.connect('ws://cmdb.inner.com:8000') as websocket:
-        name = input("What's your name? ")
-        await websocket.send(name)
-        print("> {}".format(name))
 
-        greeting = await websocket.recv()
-        print("< {}".format(greeting))
+    try:
+        async with websockets.connect(WS_SERVER_URI) as websocket:
+            await websocket.send('hello')
+            greeting = await websocket.recv()
+            print("< {}".format(greeting))
+            await websocket.close()
+    except ConnectionResetError:
+        print('服务器主动断开连接，可能是认证失败，请确认程序所在主机和服务器处于同一内网')
 
 
 if __name__ == '__main__':

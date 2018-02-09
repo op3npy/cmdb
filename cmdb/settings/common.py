@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'webterminal',
     'audit',
     'sso',
+    'channel_server',
 ]
 
 MIDDLEWARE = [
@@ -104,6 +105,7 @@ DATABASES = {
 DATABASE_ROUTERS = ['cmdb.db_route.DatabaseAppsRouter']
 DATABASE_APPS_MAPPING = {
     # 'app':'db',
+    'channel_server': 'resource',
     'resource': 'resource',
     'sso': 'sso',
     'auth': 'sso',
