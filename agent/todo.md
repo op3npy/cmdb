@@ -10,3 +10,4 @@
 * 程序单实例
 
 用pyinstaller 打包成 单个平台可执行文件，自动注册成为服务
+重点参考https://github.com/vesche/basicRAT

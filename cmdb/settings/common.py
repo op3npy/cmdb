@@ -32,7 +32,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'channels',
+    'xadmin',
+    'crispy_forms',
+    'reversion',
+
     'resource',
     'webterminal',
     'audit',
@@ -77,13 +82,13 @@ WSGI_APPLICATION = 'cmdb.wsgi.application'
 
 
 DATABASES = {
-    'default': {   # todo 测试用例错误，需要指定默认数据库
+    'default': {  # todo 测试用例错误，需要指定默认数据库
         'NAME': 'resource',
-                'HOST': 'localhost',
-                'ENGINE': 'django.db.backends.mysql',
-                'USER': 'root',
-                'PASSWORD': 'root'
-        },
+        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': 'root'
+    },
     'sso': {
         'NAME': 'sso',
         'HOST': 'localhost',
