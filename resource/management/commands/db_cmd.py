@@ -55,6 +55,7 @@ class Command(BaseCommand):
         call_command('migrate', database='resource')
         call_command('makemigrations', 'channel_server')
         call_command('migrate', 'channel_server', database='resource')
+        call_command('collectstatic')
 
         call_command('migrate', 'auth', database='sso')
         call_command('migrate', 'contenttypes', database='sso')

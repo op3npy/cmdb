@@ -34,9 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'channels',
-    'xadmin',
-    'crispy_forms',
-    'reversion',
+    # 'xadmin',
+    # 'crispy_forms',
+    # 'reversion',
 
     'resource',
     'webterminal',
