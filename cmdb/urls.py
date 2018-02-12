@@ -23,13 +23,5 @@ xadmin.autodiscover()
 xversion.register_models()
 
 urlpatterns = [
-    path('admin/', xadmin.site.urls),
+    path('', xadmin.site.urls),
 ]
-
-# from django.contrib import admin
-# from django.urls import path
-# admin.autodiscover()
-#
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-# ]
