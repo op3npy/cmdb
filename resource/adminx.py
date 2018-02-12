@@ -1,26 +1,17 @@
 # from django.contrib import admin
-from resource.models import ResourceGroups, ExtendResourceInfo, HostResourceInfo, Task
-
 import xadmin
 
-import xadmin.views as xviews
+from resource.models import ResourceGroups, ExtendResourceInfo, HostResourceInfo, Task
 
 
-# class ResourceGroupsAdmin(admin.ModelAdmin):
 class ResourceGroupsAdmin:
     search_fields = ('name',)
     list_display = ('name', 'created_date', 'modified_date')
 
 
-xadmin.site.register(ResourceGroups, ResourceGroupsAdmin)
-
-
 class ExtendResourceInfoAdmin:
     search_fields = ('name',)
     list_display = ('name', 'status', 'resource_group')
-
-
-xadmin.site.register(ExtendResourceInfo, ExtendResourceInfoAdmin)
 
 
 class HostResourceInfoAdmin:
@@ -29,13 +20,13 @@ class HostResourceInfoAdmin:
                     'status', 'memory_size', 'disk_size', 'cpu_num')
 
 
-xadmin.site.register(HostResourceInfo, HostResourceInfoAdmin)
-
-
 class TaskAdmin:
     search_fields = ('name', 'status',)
     list_display = ('name', 'crontab', 'is_periodic',
                     'is_deleted', 'status')
 
 
+xadmin.site.register(ResourceGroups, ResourceGroupsAdmin)
+xadmin.site.register(ExtendResourceInfo, ExtendResourceInfoAdmin)
+xadmin.site.register(HostResourceInfo, HostResourceInfoAdmin)
 xadmin.site.register(Task, TaskAdmin)

@@ -51,13 +51,21 @@ class Command(BaseCommand):
 
     @staticmethod
     def init_db():
-        call_command('makemigrations', 'resource')
-        call_command('migrate', database='resource')
-        call_command('makemigrations', 'channel_server')
-        call_command('migrate', 'channel_server', database='resource')
-        call_command('collectstatic')
-
         call_command('migrate', 'auth', database='sso')
         call_command('migrate', 'contenttypes', database='sso')
         call_command('migrate', 'sessions', database='sso')
         call_command('migrate', 'admin', database='sso')
+        call_command('migrate', 'xadmin', database='sso')
+
+        call_command('makemigrations', 'resource')
+        call_command('migrate', database='resource')
+        call_command('makemigrations', 'channel_server')
+        call_command('migrate', 'channel_server', database='resource')
+        # call_command('collectstatic')
+
+        from django.contrib.auth.models import User
+        u = User.objects.create_superuser(username='admin', email='xx@xx.com', password='admin')
+        u.save()
+        print('创建超级用户 user:admin, password:admin')
+
+

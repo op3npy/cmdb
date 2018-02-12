@@ -13,23 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# import xadmin
-# from django.urls import path
-# from xadmin.plugins import xversion
-#
-# xadmin.autodiscover()
-#
-# # version模块自动注册需要版本控制的 Model
-# xversion.register_models()
-#
-# urlpatterns = [
-#     path('admin/', xadmin.site.urls),
-# ]
-
-from django.contrib import admin
+import xadmin
 from django.urls import path
-admin.autodiscover()
+from xadmin.plugins import xversion
+
+xadmin.autodiscover()
+
+# version模块自动注册需要版本控制的 Model
+xversion.register_models()
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', xadmin.site.urls),
 ]
+
+# from django.contrib import admin
+# from django.urls import path
+# admin.autodiscover()
+#
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+# ]

@@ -10,6 +10,9 @@ LOGGING = {
     'filters': {
         'request_id': {
             '()': 'cmdb.filters.RequestIDFilter'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
         }
     },
     'formatters': {
@@ -19,18 +22,29 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'filters': ['request_id'],
+            'filters': ['request_id', 'require_debug_true'],
             'formatter': 'standard',
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filters': ['request_id', 'require_debug_true'],
+            'formatter': 'standard',
+            'filename': os.path.join(BASE_DIR, 'cmdb.log'),
         },
     },
     'loggers': {
         'cmdb': {
-            'handlers': ['console'],
+            'handlers': ['console', 'file'],
             'level': 'DEBUG',
             'propagate': False,
         },
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file'],
+        }
     }
 }
 
