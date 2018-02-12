@@ -56,6 +56,7 @@ class Command(BaseCommand):
         call_command('migrate', 'sessions', database='sso')
         call_command('migrate', 'admin', database='sso')
         call_command('migrate', 'xadmin', database='sso')
+        call_command('migrate', 'reversion', database='sso')
 
         call_command('makemigrations', 'resource')
         call_command('migrate', database='resource')

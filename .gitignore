@@ -6,3 +6,5 @@ venv/*
 setuptools-38\.5\.1-py2\.py3-none-any\.whl
 
 db\.sqlite3
+
+cmdb\.log
